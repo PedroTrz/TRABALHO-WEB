@@ -1,0 +1,33 @@
+$cor-primaria: #0d6efd;
+$cor-secundaria: #6c757d;
+$cor-sucesso: #198754;
+$cor-texto: #212529;
+$cor-texto-claro: #fff;
+$cor-fundo: #fff;
+$cor-fundo-claro: #f8f9fa;
+$cor-borda: #dee2e6;
+$cor-tag-roxo: #6f42c1;
+$cor-barra-laranja: #fd7e14;
+$cor-botao-teal: #14a287;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@700&display=swap');
+$font-principal: 'Montserrat', sans-serif;
+$font-destaque: 'Roboto Slab', serif;
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+
+$total-columnas: 12;
+$ancho-container: 1140px;
+$ancho-gutter: 30px;
+
+$breakpoints: (
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px
+);
+
+
+$raio-borda: 0.375rem;
+$sombra-card: 0 4px 15px rgba(0, 0, 0, 0.07);

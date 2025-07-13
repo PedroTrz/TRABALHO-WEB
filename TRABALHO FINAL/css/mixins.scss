@@ -1,0 +1,28 @@
+// Mixin para Media Queries (Mobile-first)
+@mixin breakpoint($key) {
+    $size: map-get($breakpoints, $key);
+    @media (min-width: $size) {
+        @content;
+    }
+}
+
+// Mixin para criar botões
+@mixin estilo-botao($bg-cor, $texto-cor) {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: $bg-cor;
+    color: $texto-cor;
+    border: 1px solid $bg-cor;
+    border-radius: $raio-borda;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: darken($bg-cor, 8%);
+        border-color: darken($bg-cor, 8%);
+        transform: translateY(-2px);
+    }
+}

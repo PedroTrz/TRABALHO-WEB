@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-principal;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $cor-texto;
+    background-color: $cor-fundo;
+}
+
+.btn {
+    @include estilo-botao($cor-primaria, $cor-texto-claro);
+}
+
+.btn-secundario {
+    @include estilo-botao($cor-secundaria, $cor-texto-claro);
+}
+.btn {
+    @include estilo-botao($cor-primaria, $cor-texto-claro);
+}
+
+.btn-secundario {
+    @include estilo-botao($cor-secundaria, $cor-texto-claro);
+}
+
+.btn-card-curso {
+    @include estilo-botao($cor-botao-teal, $cor-texto-claro);
+    width: 100%;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-destaque;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: $ancho-container;
+    margin: 0 auto;
+    padding: 0 ($ancho-gutter / 2);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -($ancho-gutter / 2);
+    margin-right: -($ancho-gutter / 2);
+}
+
+[class^="col-"] {
+    width: 100%;
+    padding: 0 ($ancho-gutter / 2);
+}
+
+@each $key, $value in $breakpoints {
+    @include breakpoint($key) {
+        @for $i from 1 through $total-columnas {
+            .col-#{$key}-#{$i} {
+                width: (100% / $total-columnas) * $i;
+            }
+        }
+    }
+}
+
+.main-header {
+    background-color: $cor-fundo;
+    border-bottom: 1px solid $cor-borda;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        text-decoration: none;
+        color: $cor-texto;
+        font-family: $font-destaque;
+        font-size: 1.5rem;
+    }
+
+    img {
+            height: 45px;
+            width: auto;
+            vertical-align: middle;
+        }
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: $cor-texto;
+    font-weight: 700;
+    &.active {
+        color: $cor-primaria;
+    }
+}
+
+.main-footer {
+    background-color: #212529;
+    color: $cor-texto-claro;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.text-center { text-align: center; }
+.section-padding { padding: 4rem 0; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: $cor-primaria;
+}
+
+.hero {
+    background-color: $cor-fundo-claro;
+    text-align: center;
+    .lead {
+        font-size: 1.25rem;
+        color: $cor-secundaria;
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+    }
+}
+
+.testimonial-card {
+    .card-body {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+.author-image img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .testimonial-text {
+        flex: 1;
+    }
+
+    blockquote {
+        margin: 0 0 1rem 0;
+        padding: 0;
+        font-style: italic;
+        color: $cor-secundaria;
+    }
+
+    cite {
+        font-weight: 700;
+        font-style: normal;
+        color: $cor-texto;
+    }
+}
+
+// Cards
+.card {
+    background-color: $cor-fundo;
+    border: 1px solid $cor-borda;
+    border-radius: $raio-borda;
+    box-shadow: $sombra-card;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: $ancho-gutter;
+}
+
+.card-image-container {
+    position: relative;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 5px solid $cor-barra-laranja;
+}
+
+.duration-tag {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    background-color: rgba($cor-tag-roxo, 0.9);
+    color: $cor-texto-claro;
+    padding: 0.25rem 0.75rem;
+    border-radius: $raio-borda;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    h3, h4 { 
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-family: $font-destaque;
+    }
+    p {
+        flex-grow: 1;
+        font-size: 0.9rem;
+        color: $cor-secundaria;
+    }
+    .btn-card-curso { 
+        margin-top: 1rem;
+    }
+}
+
+.testimonial-card {
+    .author-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+    }
+    blockquote {
+        font-style: italic;
+        border-left: 4px solid $cor-primaria;
+        padding-left: 1rem;
+        margin: 0 0 1rem 0;
+    }
+}
+
+
+.pricing-card {
+    .price {
+        font-size: 2.5rem;
+        font-family: $font-destaque;
+        color: $cor-primaria;
+    }
+    ul {
+        list-style: none;
+        margin-bottom: 2rem;
+    }
+    li { margin-bottom: 0.5rem; }
+    &.highlight {
+        border-color: $cor-primaria;
+        border-width: 2px;
+        transform: scale(1.05);
+    }
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 800px;
+    background: #000;
+    border-radius: $raio-borda;
+    box-shadow: $sombra-card;
+    margin: 2rem auto 0 auto;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .pricing-card {
+    .card-body {
+        padding: 2.5rem 1.5rem;
+    }
+
+    h4 {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        color: $cor-secundaria;
+    }
+
+    .price {
+        font-family: $font-destaque;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: $cor-texto;
+        margin: 0.5rem 0;
+    }
+
+    .plan-icon {
+        margin: 1.5rem 0;
+        height: 60px;
+    }
+    .features-list-card {
+        list-style: none;
+        margin: 0 0 2rem 0;
+        padding: 0;
+        li {
+            margin-bottom: 0.5rem;
+        }
+    }
+    .btn-secundario {
+        width: 100%;
+        @include estilo-botao($cor-secundaria, $cor-texto-claro);
+    }
+    .btn {
+        width: 100%;
+    }
+    &.highlight {
+        border-color: $cor-primaria;
+        border-width: 2px;
+        position: relative;
+        @include breakpoint(md) {
+            transform: scale(1.05);
+        }
+    }
+}
+.features-list-wrapper {
+    padding: 2rem;
+    @include breakpoint(lg) {
+        padding-left: 2rem;
+        border-left: 1px solid $cor-borda;
+    }
+}
+
+.features-list-main {
+    list-style: none;
+    padding: 0;
+    .bi { 
+        color: $cor-sucesso;
+        font-size: 1.25rem;
+    }
+}
+
+
+
+
+    }
